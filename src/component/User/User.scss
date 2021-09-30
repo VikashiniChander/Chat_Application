@@ -85,25 +85,23 @@ margin-right: 16px;
     }
 }
 
-.arrowIcon {
-//     height: 18px;
-// width: 9px;
-color: #324552;
-margin-left:190px;
-position: absolute;
-bottom: 1px;
-}
 
 .arrowBackIcon {
    
-     border-radius: 0px;
-    color: #324552;
-    margin-left: 45px;
-        height: 18px;
-        width: 9px;
-        position: absolute;
-    bottom: 10px;
+    border-radius: 0px;
+   color: #A5AAAE;
+   margin-left: 45px;
+       height: 18px;
+       width: 9px;
+       position: absolute;
+   bottom: 10px;
 }
+.arrowIcon {
+     color: #A5AAAE;
+    margin-left:168px;
+    position: absolute;
+    bottom: 1px;
+    }
 
 .arrowUpIcon {
     margin-top: -3px;

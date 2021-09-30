@@ -21,13 +21,14 @@ import {
   AccordionDetails,
 } from "@material-ui/core";
 import ComposeIconBlack from "../Common/ComposeIconBlack/ComposeIconBlack";
-import ArrowBackwardIcon from "../Common/ArrowBackwardIcon/ArrowBackwardIcon";
-import ArrowForwardIcon from "../Common/ArrowForwardIcon/ArrowForwardIcon";
 import CustomizedTooltip from "../Common/ToolTip/CustomizedTooltip";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import KeyboardArrowLeftIcon from "@material-ui/icons/KeyboardArrowLeft";
 import UserData from "./User.json";
 import ThirdParty from "./ThirdParty.json";
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+
 const message = `Truncation should be conditionally applicable on this long line of text
  as this is a much longer line than what the container can support. `;
 
@@ -63,7 +64,10 @@ function User() {
         </Box>
 
         <Grid item conatiner>
-          {/* <Grid><ArrowForwardIcon /></Grid> */}
+        <Grid item conatiner>
+
+          <Grid  className="arrowBackIcon"><ArrowBackIosIcon></ArrowBackIosIcon></Grid>
+
           <Grid className="userIcon">
             {/*  <Box sx={{pl:2}}>
               
@@ -71,8 +75,9 @@ function User() {
             </Box> */}
             <Avatar src="https://material-ui.com/static/images/avatar/1.jpg"></Avatar>
           </Grid>
+          <Grid class="arrowIcon"><ArrowForwardIosIcon></ArrowForwardIosIcon></Grid>
+          </Grid>
 
-          {/* <Grid><ArrowBackwardIcon /></Grid> */}
           {UserData && UserData.data && (
             <Paper className="rectangle">
               <Box wrap="wrap" container mt={2}>
