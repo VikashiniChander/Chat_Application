@@ -48,6 +48,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 20,
     fontFamily: "Work Sans",
   },
+  content: {
+    justifyContent: "end",
+  }
 }));
 
 function User() {
@@ -108,7 +111,7 @@ function User() {
               <Accordion>
                 <AccordionSummary
                   aria-controls="panel1a-content"
-                  id="panel1a-header"
+                  id="panel1a-header" 
                 >
                   <Box textAlign="right">
                     <CustomizedTooltip placement="top" title="Configure">

@@ -97,7 +97,7 @@ class Conversation extends Component {
               </CustomizedTooltip>
             </Grid>
           </Grid>
-          <InfiniteScroll
+          <InfiniteScroll className="scroll"
             dataLength={this.state.ConversationData.length}
             next={this.fetchMoreData}
             hasMore={true}
@@ -125,8 +125,9 @@ class Conversation extends Component {
                           alt="Remy Sharp"
                           src="https://material-ui.com/static/images/avatar/1.jpg"
                         /> */}
-                        <Grid class="avatar"> <Grid className="dot-w">
-                            <WhatsAppIcon className="whatsApp"></WhatsAppIcon></Grid> </Grid>
+                        <Grid class="avatar"> <Grid className="letter">R</Grid><Grid className="dot-w"> 
+                            <WhatsAppIcon className="whatsApp"></WhatsAppIcon>
+                            </Grid> </Grid>
                       </ListItemIcon>
                     </Grid>
                     <Grid item xs={6} md={9}>
