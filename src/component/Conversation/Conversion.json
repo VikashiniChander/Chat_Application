@@ -1,0 +1,45 @@
+{
+  "RequestURL": "https://api.sakari.io/v1/accounts/5c58bb1c585e34634578f16e/conversations?closed=false&unread=false&",
+  "success": true,
+  "data": [
+    {
+      "contact": {
+        "firstName": "Chris",
+        "lastName": "Sakari"
+      },
+      "unread": [],
+      "lastMessage": {
+        "message": "Text messages have the benefit of instant communication with colleagues, customers, and clients. Sending a long text message is no different than a short message, except most text messaging services have a character limit that rivals a Tweet. When characters limit you, you may have to break up your texts or send a vague, confusing message. Textedly gives you the ability to communicate in a variety of text lengths."
+      },
+      "created": {
+        "at": "2021-09-21T04:58:28.049Z"
+      }
+    },
+    {
+      "contact": {
+        "firstName": "Chris",
+        "lastName": "Sakari11"
+      },
+      "unread": [],
+      "lastMessage": {
+        "message": "Text messages have the benefit of instant communication with colleagues, customers, and clients. Sending a long text message is no different than a short message, except most text messaging services have a character limit that rivals a Tweet. When characters limit you, you may have to break up your texts or send a vague, confusing message. Textedly gives you the ability to communicate in a variety of text lengths."
+      },
+      "created": {
+        "at": "2021-09-21T04:58:28.049Z"
+      }
+    },
+    {
+      "contact": {
+        "firstName": "Chris",
+        "lastName": "Sakari11"
+      },
+      "unread": ["dfdfskjfdjk", "dsffdsfds"],
+      "lastMessage": {
+        "message": "Text messages have the benefit of instant communication with colleagues, customers, and clients. Sending a long text message is no different than a short message, except most text messaging services have a character limit that rivals a Tweet. When characters limit you, you may have to break up your texts or send a vague, confusing message. Textedly gives you the ability to communicate in a variety of text lengths."
+      },
+      "created": {
+        "at": "2021-09-21T04:58:28.049Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "RequesrURL": "https://api.sakari.io/v1/accounts/<accountid>/integrations/<integrationName>/contacts/<contactId>",
+  "data": [
+    {
+      "gender": "male",
+      "age": "25",
+      "color": "brown",
+      "country": "USA",
+      "state": "california",
+      "favoriteColor": "green",
+      "service": "sakari",
+      "platform": "textbase",
+      "headquarters": "san francsico",
+      "county": "san francsico",
+      "message": "“TextMagic provided a reliable, professional and powerful way to send SMS for our urgent medical services organization."
+    },
+    {
+      "gender": "male",
+      "age": "25",
+      "color": "brown",
+      "country": "USA",
+      "state": "california",
+      "favoriteColor": "green",
+      "service": "sakari",
+      "platform": "textbase",
+      "headquarters": "san francsico",
+      "county": "san francsico",
+      "message": "“TextMagic provided a reliable, professional and powerful way to send SMS for our urgent medical services organization."
+    },
+    {
+      "gender": "male",
+      "age": "25",
+      "color": "brown",
+      "country": "USA",
+      "state": "california",
+      "favoriteColor": "green",
+      "service": "sakari",
+      "platform": "textbase",
+      "headquarters": "san francsico",
+      "county": "san francsico",
+      "message": "“TextMagic provided a reliable, professional and powerful way to send SMS for our urgent medical services organization."
+    },
+    {
+      "gender": "male",
+      "age": "25",
+      "color": "brown",
+      "country": "USA",
+      "state": "california",
+      "favoriteColor": "green",
+      "service": "sakari",
+      "platform": "textbase",
+      "headquarters": "san francsico",
+      "county": "san francsico",
+      "message": "“TextMagic provided a reliable, professional and powerful way to send SMS for our urgent medical services organization."
+    }
+  ]
+}

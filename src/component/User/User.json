@@ -1,0 +1,13 @@
+{
+  "RequestURL": "https://api.sakari.io/v1/accounts/5c58bb1c585e34634578f16e/contacts/contactId",
+  "data": {
+    "contact": {
+      "firstName": "Chris",
+      "lastName": "Sakari",
+      "email": "abc@abc.com",
+      "mobile": {
+        "number": "+18663050216"
+      }
+    }
+  }
+}

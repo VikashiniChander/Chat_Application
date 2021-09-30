@@ -1,0 +1,40 @@
+.MuiGrid-grid-xs-1 {
+    flex-grow: 0;
+    max-width: 3.333333%;
+    flex-basis: 3.333333% !important;
+}
+
+.panel-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    svg {
+        margin: 10px;
+        height: 33px;
+        width: 34px;
+        left: 24px;
+        top: 253px;
+        border-radius: 0px;
+        }
+
+}
+.panel-icon {
+    margin-top: 10px;
+ }
+
+.smile-icon {
+    bottom: 10px;
+    left: 0px !important;
+    position: absolute;
+    top: auto !important;
+}
+
+.grey-color {
+    color: #7D92A1;
+
+}
+
+
