@@ -48,9 +48,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 20,
     fontFamily: "Work Sans",
   },
-  content: {
-    justifyContent: "end",
-  }
+
 }));
 
 function User() {
@@ -109,7 +107,7 @@ function User() {
           ThirdParty.data.map((t) => {
             return (
               <Accordion>
-                <AccordionSummary
+                <AccordionSummary className="content-align"
                   aria-controls="panel1a-content"
                   id="panel1a-header" 
                 >
