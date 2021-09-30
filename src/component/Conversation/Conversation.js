@@ -28,7 +28,22 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 import ConversationData from "./Conversion.json";
 import Moment from "react-moment";
+import { withStyles } from '@material-ui/styles';
 let message = "0";
+const styles = {
+  ListItemText: {
+    overflow: "hidden",
+    position: "relative",
+    lineHeight: "1em",
+    height: "2.5em",
+    width: '200px',
+    "&:before": {
+      content:  '"..."',
+      float: 'right',
+      marginTop: '1.5em'
+    },
+  },
+};
 class Conversation extends Component {
   constructor(props) {
     super(props);
@@ -46,6 +61,8 @@ class Conversation extends Component {
     });
   };
   render() {
+    const { classes } = this.props;
+    console.log(classes)
     return (
       <Grid className="blue-bg block-spacing">
         <Box>
@@ -122,7 +139,10 @@ class Conversation extends Component {
                           </Moment>
                         </ListItemText>
                       </ListItem>
-                      <ListItemText className="message">
+                      <ListItemText
+                        className={`message ${classes.ListItemText}`}
+                        //className={classes.Typography
+                      >
                         {c.lastMessage.message}
                       </ListItemText>
                     </Grid>
@@ -137,4 +157,4 @@ class Conversation extends Component {
   }
 }
 
-export default Conversation;
+export default withStyles(styles)(Conversation);
