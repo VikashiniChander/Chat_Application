@@ -108,23 +108,12 @@ class Chat extends Component {
         </List>
         <Divider />
         <Grid container className="message-box ">
-          <Grid item xs={8} sm={6}>
-            <TextField label="Type a message..." fullWidth />
-          </Grid>
-          <Grid xs={1} className="icon">
-            <Grid>
-              <CustomizedTooltip placement="top" title="Send">
-                <SendOutlinedIcon></SendOutlinedIcon>
-              </CustomizedTooltip>
-            </Grid>
-          </Grid>
-          <Grid xs={1} className="icon">
+        <Grid xs={1} className="icon">
             <Grid>
               {" "}
               <TokenIcon />
             </Grid>
           </Grid>
-
           <Grid xs={1} className="icon">
             <CustomizedTooltip placement="top" title="Links">
               <InsertLinkSharpIcon></InsertLinkSharpIcon>
@@ -138,6 +127,24 @@ class Chat extends Component {
           <Grid xs={1} className="icon">
             <TextIcon />
           </Grid>
+          <Grid item xs={8} sm={6}>
+            <TextField label="Type a message..." fullWidth />
+          </Grid>
+          <Grid xs={1} className="icon">
+            <Grid>
+              <CustomizedTooltip placement="top" title="Send">
+                <SendOutlinedIcon></SendOutlinedIcon>
+              </CustomizedTooltip>
+            </Grid>
+          </Grid>
+          {/* <Grid xs={1} className="icon">
+            <Grid>
+              {" "}
+              <TokenIcon />
+            </Grid>
+          </Grid> */}
+
+         
         </Grid>
       </Grid>
     );
