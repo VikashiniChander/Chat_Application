@@ -107,11 +107,11 @@ function User() {
           ThirdParty.data.map((t) => {
             return (
               <Accordion>
-                <AccordionSummary className="content-align"
+                <AccordionSummary 
                   aria-controls="panel1a-content"
                   id="panel1a-header" 
                 >
-                  <Box textAlign="right">
+                  <Box textAlign="right" className="content-align">
                     <CustomizedTooltip placement="top" title="Configure">
                       <SettingsOutlinedIcon className="gearIcon"></SettingsOutlinedIcon>
                     </CustomizedTooltip>
