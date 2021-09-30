@@ -25,7 +25,8 @@ import ComposeIcon from "../Common/ComposeIcon/ComposeIcon";
 import Typography from "@material-ui/core/Typography";
 import CustomizedTooltip from "./../Common/ToolTip/CustomizedTooltip";
 import InfiniteScroll from "react-infinite-scroll-component";
-import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
+import SmsOutlinedIcon from "@material-ui/icons/SmsOutlined";
 import ConversationData from "./Conversion.json";
 import Moment from "react-moment";
 import { withStyles } from "@material-ui/styles";
@@ -37,12 +38,11 @@ const styles = {
     position: "relative",
     lineHeight: "1em",
     height: "2.5em",
-    width: '200px',
+    width: "180px",
     display: "-webkit-box",
     boxOrient: "vertical",
     lineClamp: 2,
     wordBreak: "break-all",
-    overflow: "hidden",
   },
 };
 class Conversation extends Component {
@@ -60,6 +60,16 @@ class Conversation extends Component {
         ...ConversationData.data,
       ],
     });
+  };
+  getStatusIcon = (type) => {
+    switch (type) {
+      case "sms":
+        return <WhatsAppIcon className="whatsApp"></WhatsAppIcon>;
+      case "whatsApp":
+        return <SmsOutlinedIcon className="whatsApp"></SmsOutlinedIcon>;
+      default:
+        return <></>;
+    }
   };
   render() {
     const { classes } = this.props;
@@ -81,13 +91,13 @@ class Conversation extends Component {
               className="search-icon"
             >
               <Grid xs={2}>
-                {" "}
+              
                 <IconButton type="submit" aria-label="search">
                   <SearchIcon />
                 </IconButton>
               </Grid>
               <Grid xs={10}>
-                {" "}
+              
                 <Searchbox></Searchbox>
               </Grid>
             </Grid>
@@ -97,7 +107,8 @@ class Conversation extends Component {
               </CustomizedTooltip>
             </Grid>
           </Grid>
-          <InfiniteScroll className="scroll"
+          <InfiniteScroll
+            className="scroll"
             dataLength={this.state.ConversationData.length}
             next={this.fetchMoreData}
             hasMore={true}
@@ -112,7 +123,7 @@ class Conversation extends Component {
               return (
                 <List
                   className={`message-block spacing ${
-                    indx % 2 === 0 ? "blue-bg" : " white-bg"
+                    indx % 2 === 0 ? " white-bg" : "blue-bg"
                   }`}
                 >
                   {c.unread && c.unread.length > 0 && (
@@ -125,9 +136,13 @@ class Conversation extends Component {
                           alt="Remy Sharp"
                           src="https://material-ui.com/static/images/avatar/1.jpg"
                         /> */}
-                        <Grid class="avatar"> <Grid className="letter">R</Grid><Grid className="dot-w"> 
-                            <WhatsAppIcon className="whatsApp"></WhatsAppIcon>
-                            </Grid> </Grid>
+                        <Grid class="avatar">
+                        
+                          <Grid className="letter">R</Grid>
+                          <Grid className="dot-w">
+                            {this.getStatusIcon(c.type)}
+                          </Grid>{" "}
+                        </Grid>
                       </ListItemIcon>
                     </Grid>
                     <Grid item xs={6} md={9}>
