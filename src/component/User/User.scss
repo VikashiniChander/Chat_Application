@@ -14,8 +14,9 @@ border-radius: 0px;
 background-color: #EAF0FF;
 padding: 10px;
 
-.content-align {
+.MuiAccordionSummary-content {
 justify-content: end;
+display: flex;
 }
 
 .MuiGrid-item {
