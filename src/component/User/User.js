@@ -49,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 20,
     fontFamily: "Work Sans",
   },
-
 }));
 
 function User() {
@@ -64,15 +63,13 @@ function User() {
         </Box>
 
         <Grid item conatiner>
-        <Grid item conatiner>
+
+       
 
           <Grid  className="arrowBackIcon"><ArrowBackIosIcon></ArrowBackIosIcon></Grid>
 
           <Grid className="userIcon">
-            {/*  <Box sx={{pl:2}}>
-              
-            <KeyboardArrowLeftIcon />
-            </Box> */}
+            <ArrowBackwardIcon></ArrowBackwardIcon>
             <Avatar src="https://material-ui.com/static/images/avatar/1.jpg"></Avatar>
           </Grid>
           <Grid class="arrowIcon"><ArrowForwardIosIcon></ArrowForwardIosIcon></Grid>
@@ -91,7 +88,6 @@ function User() {
                 </Grid>
                 <Grid>
                   <Box className="rectangle-text">
-                    {" "}
                     {`${UserData.data.contact.email} `}
                   </Box>
                 </Grid>
@@ -114,7 +110,7 @@ function User() {
               <Accordion>
                 <AccordionSummary 
                   aria-controls="panel1a-content"
-                  id="panel1a-header" 
+                  id="panel1a-header"
                 >
                   <Box textAlign="right" className="content-align">
                     <CustomizedTooltip placement="top" title="Configure">
