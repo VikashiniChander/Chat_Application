@@ -25,7 +25,7 @@ import ComposeIcon from "../Common/ComposeIcon/ComposeIcon";
 import Typography from "@material-ui/core/Typography";
 import CustomizedTooltip from "./../Common/ToolTip/CustomizedTooltip";
 import InfiniteScroll from "react-infinite-scroll-component";
-
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import ConversationData from "./Conversion.json";
 import Moment from "react-moment";
 import { withStyles } from '@material-ui/styles';
@@ -37,11 +37,11 @@ const styles = {
     lineHeight: "1em",
     height: "2.5em",
     width: '200px',
-    "&:before": {
-      content:  '"..."',
-      float: 'right',
-      marginTop: '1.5em'
-    },
+    display: "-webkit-box",
+    boxOrient: "vertical",
+    lineClamp: 2,
+    wordBreak: "break-all",
+    overflow: "hidden",
   },
 };
 class Conversation extends Component {
@@ -121,10 +121,12 @@ class Conversation extends Component {
                   <Grid container>
                     <Grid item xs={2} md={3}>
                       <ListItemIcon>
-                        <Avatar
+                        {/* <Avatar
                           alt="Remy Sharp"
                           src="https://material-ui.com/static/images/avatar/1.jpg"
-                        />
+                        /> */}
+                        <Grid class="avatar"> <Grid className="dot-w">
+                            <WhatsAppIcon className="whatsApp"></WhatsAppIcon></Grid> </Grid>
                       </ListItemIcon>
                     </Grid>
                     <Grid item xs={6} md={9}>
