@@ -25,23 +25,24 @@ import ComposeIcon from "../Common/ComposeIcon/ComposeIcon";
 import Typography from "@material-ui/core/Typography";
 import CustomizedTooltip from "./../Common/ToolTip/CustomizedTooltip";
 import InfiniteScroll from "react-infinite-scroll-component";
-import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
+import SmsOutlinedIcon from "@material-ui/icons/SmsOutlined";
 import ConversationData from "./Conversion.json";
 import Moment from "react-moment";
-import { withStyles } from '@material-ui/styles';
-let message = "0";
+import { withStyles } from "@material-ui/styles";
+import Searchbox from "./../Common/Searchbox/Index";
+
 const styles = {
   ListItemText: {
     overflow: "hidden",
     position: "relative",
     lineHeight: "1em",
     height: "2.5em",
-    width: '200px',
+    width: "180px",
     display: "-webkit-box",
     boxOrient: "vertical",
     lineClamp: 2,
     wordBreak: "break-all",
-    overflow: "hidden",
   },
   root: {
     MuiAvatar: {
@@ -69,6 +70,7 @@ class Conversation extends Component {
       ConversationData: ConversationData.data,
     };
     this.fetchMoreData = this.fetchMoreData.bind(this);
+    this.setUsers = this.setUsers.bind(this);
   }
   fetchMoreData = () => {
     this.setState({
@@ -78,9 +80,32 @@ class Conversation extends Component {
       ],
     });
   };
+  getStatusIcon = (type) => {
+    switch (type) {
+      case "whatsApp":
+        return <WhatsAppIcon className="whatsApp"></WhatsAppIcon>;
+      case "sms":
+        return <SmsOutlinedIcon className="whatsApp"></SmsOutlinedIcon>;
+      default:
+        return <></>;
+    }
+  };
+  setUsers = (user) => {
+    if (user) {
+  
+      this.setState({
+        ConversationData: this.state.ConversationData.filter((p) =>
+          user.includes(p.contact.firstName)
+        ),
+      });
+    } else {
+      this.setState({
+        ConversationData: ConversationData.data,
+      });
+    }
+  };
   render() {
     const { classes } = this.props;
-    console.log(classes)
     return (
       <Grid className="blue-bg block-spacing">
           <Grid className="compose-block">
@@ -98,14 +123,12 @@ class Conversation extends Component {
               className="search-icon"
             >
               <Grid xs={2}>
-                {" "}
                 <IconButton type="submit" aria-label="search">
                   <SearchIcon />
                 </IconButton>
               </Grid>
               <Grid xs={10}>
-                {" "}
-                <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search..." />
+                <Searchbox setUsers={this.setUsers}></Searchbox>
               </Grid>
             </Grid>
             <Grid xs={1} className="filterIcon">
@@ -130,7 +153,7 @@ class Conversation extends Component {
               return (
                 <List
                   className={`message-block spacing ${
-                    indx % 2 === 0 ? "blue-bg" : " white-bg"
+                    indx % 2 === 0 ? " white-bg" : "blue-bg"
                   }`}
                 >
                   {c.unread && c.unread.length > 0 && (
@@ -149,6 +172,12 @@ class Conversation extends Component {
                             </Grid> */}
                             <Avatar className="avatar-icon" >  <WhatsAppIcon></WhatsAppIcon></Avatar>
                         </Avatar>
+                        {/* <Grid class="avatar">
+                          <Grid className="letter">R</Grid>
+                          <Grid className="dot-w">
+                            {this.getStatusIcon(c.type)}
+                          </Grid>{" "}
+                        </Grid> */}
                       </ListItemIcon>
                     </Grid>
                     <Grid item xs={6} md={9}>

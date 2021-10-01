@@ -13,11 +13,12 @@
       },
       "created": {
         "at": "2021-09-21T04:58:28.049Z"
-      }
+      },
+      "type":"sms"
     },
     {
       "contact": {
-        "firstName": "Chris",
+        "firstName": "Rick",
         "lastName": "Sakari11"
       },
       "unread": [],
@@ -26,11 +27,12 @@
       },
       "created": {
         "at": "2021-09-21T04:58:28.049Z"
-      }
+      },
+      "type":"whatsApp"
     },
     {
       "contact": {
-        "firstName": "Chris",
+        "firstName": "John",
         "lastName": "Sakari11"
       },
       "unread": ["dfdfskjfdjk", "dsffdsfds"],
@@ -39,7 +41,8 @@
       },
       "created": {
         "at": "2021-09-21T04:58:28.049Z"
-      }
+      },
+      "type":"whatsApp"
     }
   ]
 }

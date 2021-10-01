@@ -1,7 +1,7 @@
 import CustomizedTooltip from "./../ToolTip/CustomizedTooltip";
 function TextIcon() {
   return (
-    <CustomizedTooltip   placement="top" title="Templates">
+    <CustomizedTooltip title="Templates">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         enable-background="new 0 0 24 24"

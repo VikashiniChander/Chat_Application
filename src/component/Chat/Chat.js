@@ -111,7 +111,7 @@ class Chat extends Component {
         <Grid container className="message-box" >
           <Grid xs={1} item className="icon">
             <Grid>
-              {" "}
+            
               <TokenIcon />
             </Grid>
           </Grid>
@@ -140,7 +140,7 @@ class Chat extends Component {
           </Grid>
           {/* <Grid xs={1} className="icon">
             <Grid>
-              {" "}
+            
               <TokenIcon />
             </Grid>
           </Grid> */}

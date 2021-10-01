@@ -1,5 +1,5 @@
 import "./User.scss";
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -26,8 +26,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import KeyboardArrowLeftIcon from "@material-ui/icons/KeyboardArrowLeft";
 import UserData from "./User.json";
 import ThirdParty from "./ThirdParty.json";
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const message = `Truncation should be conditionally applicable on this long line of text
  as this is a much longer line than what the container can support. `;
@@ -49,13 +49,16 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 20,
     fontFamily: "Work Sans",
   },
-
 }));
 
 function User() {
   //create class based upon class outside of export default.
   const classes = useStyles();
-  console.log(UserData.data);
+  const [thirdPartyDetail, setThirdPartyDetail] = React.useState(
+    ThirdParty.data[0].detail
+  );
+  const [selectedIndx, setSelectedIndx] = React.useState(0);
+  const [userDataDetail, setUserDataDetail] = React.useState(UserData.data[0]);
   return (
     <Grid item lg={2} md={2}>
       <Box spacing={2} className="user-block">
@@ -63,27 +66,50 @@ function User() {
           <ComposeIconBlack />
         </Box>
 
-        <Grid item>
-        <Grid item>
+        <Grid item conatiner>
+          <Grid item conatiner>
+            <Grid
+              onClick={() => {
+                if (selectedIndx !== 0) {
+                  setThirdPartyDetail(ThirdParty.data[selectedIndx - 1].detail);
+                  setSelectedIndx(selectedIndx - 1);
+                  setUserDataDetail(UserData.data[selectedIndx - 1]);
+                }
+              }}
+              className="arrowBackIcon"
+            >
+              <CustomizedTooltip title="prev">
+                <ArrowBackIosIcon></ArrowBackIosIcon>
+              </CustomizedTooltip>
+            </Grid>
 
-          <Grid  className="arrowBackIcon"><ArrowBackIosIcon></ArrowBackIosIcon></Grid>
-
-          <Grid className="userIcon">
-            {/*  <Box sx={{pl:2}}>
-              
-            <KeyboardArrowLeftIcon />
-            </Box> */}
-            <Avatar src="https://material-ui.com/static/images/avatar/1.jpg"></Avatar>
+            <Grid className="userIcon">
+              <Avatar src="https://material-ui.com/static/images/avatar/1.jpg"></Avatar>
+            </Grid>
+            <Grid class="arrowIcon">
+              <CustomizedTooltip title="next">
+                <ArrowForwardIosIcon
+                  // disabled={selectedIndx === ThirdParty.data.length - 1}
+                  onClick={() => {
+                    if (selectedIndx !== ThirdParty.data.length - 1) {
+                      setThirdPartyDetail(
+                        ThirdParty.data[selectedIndx + 1].detail
+                      );
+                      setUserDataDetail(UserData.data[selectedIndx + 1]);
+                      setSelectedIndx(selectedIndx + 1);
+                    }
+                  }}
+                ></ArrowForwardIosIcon>
+              </CustomizedTooltip>
+            </Grid>
           </Grid>
-          <Grid className="arrowIcon"><ArrowForwardIosIcon></ArrowForwardIosIcon></Grid>
-          </Grid>
 
-          {UserData && UserData.data && (
+          {userDataDetail && (
             <Paper className="rectangle">
               <Box wrap="wrap" container mt={4}>
                 <Grid xs={12}>
-                  <Typography className={classes.typography}>
-                    {`${UserData.data.contact.firstName} ${UserData.data.contact.lastName}`}
+                  <Typography class={classes.typography}>
+                    {`${userDataDetail.contact.firstName} ${userDataDetail.contact.lastName}`}
                   </Typography>
                 </Grid>
                 <Grid>
@@ -92,7 +118,7 @@ function User() {
                 <Grid>
                   <Box className="rectangle-text">
                     {" "}
-                    {`${UserData.data.contact.email} `}
+                    {`${userDataDetail.contact.email} `}
                   </Box>
                 </Grid>
               </Box>
@@ -101,20 +127,20 @@ function User() {
                   <PhoneOutlinedIcon></PhoneOutlinedIcon>
                 </Grid>
                 <Grid>
-                  <Box className="rectangle-text">{`${UserData.data.contact.mobile.number} `}</Box>
+                  <Box className="rectangle-text">{`${userDataDetail.contact.mobile.number} `}</Box>
                 </Grid>
               </Grid>
             </Paper>
           )}
         </Grid>
-        {ThirdParty &&
-          ThirdParty.data.length > 0 &&
-          ThirdParty.data.map((t) => {
+        {thirdPartyDetail &&
+          thirdPartyDetail.length > 0 &&
+          thirdPartyDetail.map((t) => {
             return (
               <Accordion>
-                <AccordionSummary 
+                <AccordionSummary
                   aria-controls="panel1a-content"
-                  id="panel1a-header" 
+                  id="panel1a-header"
                 >
                   <Box textAlign="right" className="content-align">
                     <CustomizedTooltip placement="top" title="Configure">
@@ -129,47 +155,19 @@ function User() {
                       <img src="App_MUI\src\assets\address1.png" />
                     </Grid>
                     <Grid className="message-spacing">
-                      <Box className="rectangle-text">123 Main St</Box>
-                      <Box className="rectangle-text italic-text">
-                        Contact Owner
-                      </Box>
+                      <Box className="rectangle-text">{t.gender}</Box>
+                      <Box className="rectangle-text italic-text">{t.age}</Box>
                       <Box className="rectangle-text">Adam Horsman</Box>
                       <Box className="rectangle-text italic-text">
-                        Favourite Color
+                        {t.color}
                       </Box>
-                      <Box className="rectangle-text">Green</Box>
+                      <Box className="rectangle-text">{t.country}</Box>
                     </Grid>
                   </Grid>
                 </AccordionDetails>
               </Accordion>
             );
           })}
-        <Accordion>
-          <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
-            <Box textAlign="right">
-              <CustomizedTooltip placement="top" title="Configure">
-                <SettingsOutlinedIcon className="gearIcon"></SettingsOutlinedIcon>
-              </CustomizedTooltip>
-              <ExpandMoreIcon />
-            </Box>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Grid wrap="nowrap" spacing={0} container>
-              <Grid xs={1}>
-                <img src="App_MUI\src\assets\address1.png" />
-              </Grid>
-              <Grid className="message-spacing">
-                <Box className="rectangle-text">123 Main St</Box>
-                <Box className="rectangle-text italic-text">Contact Owner</Box>
-                <Box className="rectangle-text">Adam Horsman</Box>
-                <Box className="rectangle-text italic-text">
-                  Favourite Color
-                </Box>
-                <Box className="rectangle-text">Green</Box>
-              </Grid>
-            </Grid>
-          </AccordionDetails>
-        </Accordion>
       </Box>
     </Grid>
   );
