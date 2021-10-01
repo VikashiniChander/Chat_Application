@@ -31,8 +31,8 @@ class Chat extends Component {
   render() {
     return (
       <Grid item lg={7} md={6} className="chat-grid">
-        <Grid >
-        {/* <List className="chat-left">
+        <Grid className="scroll-flow">
+        <List className="chat-left">
           <Grid>
             <Grid>
               <ListItem button key="RemySharp">
@@ -55,7 +55,7 @@ class Chat extends Component {
             </Grid>
             <CheckIcon className="tickGreen" />
           </Grid>
-        </List> */}
+        </List>
         <List className="chat-right">
           <Grid>
             <Grid>
