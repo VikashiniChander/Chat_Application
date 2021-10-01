@@ -33,6 +33,8 @@
     border-radius: 10px;
     margin: 9px !important;
     padding-left: 10px !important;
+    padding-right: 8px !important;
+
   }
 
   .spacing {
@@ -45,6 +47,9 @@
     }
     .MuiListItemText-root {
       margin: 0px;
+    }
+    .Conversation-ListItemText-1 {
+      width: auto;
     }
   }
   .message {
