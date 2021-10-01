@@ -14,25 +14,38 @@ import ConstructionIcon from "../Common/ConstructionIcon/ConstructionIcon";
 import GroupIcon from "../Common/GroupIcon/GroupIcon";
 import TextIcon from "../Common/TextIcon/TextIcon";
 import CustomizedTooltip from "../Common/ToolTip/CustomizedTooltip";
+import { NavLink } from "react-router-dom";
 
 function LeftSidePanel() {
   return (
     <Grid item xs={1} className="panel-container" direction="row" container>
-      <Grid xs={9} direction="column" >
-      <InboxIcon />
-      <Podcast />
-      <TextIcon />
-      <GroupIcon />
-      <PanelIcon />
-      <ConstructionIcon />
+      <Grid xs={9} direction="column">
+        <NavLink to={"/Inbox"} exact activeClassName="selected">
+          <InboxIcon />
+        </NavLink>
+        <NavLink to={"/Campaigns"} exact activeClassName="selected">
+          <Podcast />
+        </NavLink>
+        <NavLink to={"/Templates"} exact activeClassName="selected">
+          <TextIcon />
+        </NavLink>
+        <NavLink to={"/Contacts"} exact activeClassName="selected">
+          <GroupIcon />
+        </NavLink>
+        <NavLink to={"/Tools"} exact activeClassName="selected">
+          <PanelIcon />
+        </NavLink>
+        <NavLink to={"/Featurerequests"} exact activeClassName="selected">
+          <ConstructionIcon />
+        </NavLink>
       </Grid>
       <Grid direction="column">
-      <CustomizedTooltip title="Status">
-        <SentimentSatisfiedOutlinedIcon className="panel-icon smile-icon"></SentimentSatisfiedOutlinedIcon>
-      </CustomizedTooltip>
-      <CustomizedTooltip title="Status">
-        <SentimentSatisfiedOutlinedIcon className="panel-icon smile-icon"></SentimentSatisfiedOutlinedIcon>
-      </CustomizedTooltip>
+        <CustomizedTooltip title="Status">
+          <SentimentSatisfiedOutlinedIcon className="panel-icon smile-icon"></SentimentSatisfiedOutlinedIcon>
+        </CustomizedTooltip>
+        <CustomizedTooltip title="Status">
+          <SentimentSatisfiedOutlinedIcon className="panel-icon smile-icon"></SentimentSatisfiedOutlinedIcon>
+        </CustomizedTooltip>
       </Grid>
     </Grid>
   );

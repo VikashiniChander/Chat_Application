@@ -52,6 +52,7 @@ class Conversation extends Component {
       ConversationData: ConversationData.data,
     };
     this.fetchMoreData = this.fetchMoreData.bind(this);
+    this.setUsers = this.setUsers.bind(this);
   }
   fetchMoreData = () => {
     this.setState({
@@ -63,12 +64,26 @@ class Conversation extends Component {
   };
   getStatusIcon = (type) => {
     switch (type) {
-      case "sms":
-        return <WhatsAppIcon className="whatsApp"></WhatsAppIcon>;
       case "whatsApp":
+        return <WhatsAppIcon className="whatsApp"></WhatsAppIcon>;
+      case "sms":
         return <SmsOutlinedIcon className="whatsApp"></SmsOutlinedIcon>;
       default:
         return <></>;
+    }
+  };
+  setUsers = (user) => {
+    if (user) {
+  
+      this.setState({
+        ConversationData: this.state.ConversationData.filter((p) =>
+          user.includes(p.contact.firstName)
+        ),
+      });
+    } else {
+      this.setState({
+        ConversationData: ConversationData.data,
+      });
     }
   };
   render() {
@@ -91,14 +106,12 @@ class Conversation extends Component {
               className="search-icon"
             >
               <Grid xs={2}>
-              
                 <IconButton type="submit" aria-label="search">
                   <SearchIcon />
                 </IconButton>
               </Grid>
               <Grid xs={10}>
-              
-                <Searchbox></Searchbox>
+                <Searchbox setUsers={this.setUsers}></Searchbox>
               </Grid>
             </Grid>
             <Grid xs={1} className="filterIcon">
@@ -137,7 +150,6 @@ class Conversation extends Component {
                           src="https://material-ui.com/static/images/avatar/1.jpg"
                         /> */}
                         <Grid class="avatar">
-                        
                           <Grid className="letter">R</Grid>
                           <Grid className="dot-w">
                             {this.getStatusIcon(c.type)}
