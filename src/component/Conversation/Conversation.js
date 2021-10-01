@@ -43,6 +43,11 @@ const styles = {
     wordBreak: "break-all",
     overflow: "hidden",
   },
+  root: {
+    MuiAvatar: {
+      height: 25
+    }
+  }
 }
 
 const styleAvatar = makeStyles((theme) => ({

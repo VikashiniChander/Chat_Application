@@ -190,7 +190,7 @@ border-radius: 0px;
 .dot-w {
   height: 25px;
   width: 25px;
-  background-color: #0078CE;
+  background-color: #1f2122;
   border-radius: 50%;
   display: inline-block;
   display: flex;
@@ -212,7 +212,14 @@ border-radius: 0px;
 }
 
 .avatar-icon {
-  height: 25px;
-  width: 25px;
+  height: 25px !important;
+  width: 25px !important;
+  bottom: 10px;
+  left: 20px;
+  background-color: #0078CE !important;
+
+  .MuiSvgIcon-root {
+    width: 0.8em;
+  }
 }
 
