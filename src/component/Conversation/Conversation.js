@@ -82,7 +82,7 @@ class Conversation extends Component {
     const { classes } = this.props;
     console.log(classes)
     return (
-      <Grid className="blue-bg block-spacing">
+      <Grid className="blue-bg block-spacing" container>
           <Grid className="compose-block">
             <Box className="compose-button">
               <ComposeIcon />

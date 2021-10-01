@@ -57,7 +57,7 @@ function User() {
   const classes = useStyles();
   console.log(UserData.data);
   return (
-    <Grid item lg={2} md={2}>
+    <Grid item container>
       <Box spacing={2} className="user-block">
         <Box className="composeIcon">
           <ComposeIconBlack />

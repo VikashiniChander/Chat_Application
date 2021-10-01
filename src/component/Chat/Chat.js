@@ -30,7 +30,7 @@ import CustomizedTooltip from "./../Common/ToolTip/CustomizedTooltip";
 class Chat extends Component {
   render() {
     return (
-      <Grid item lg={7} md={6} className="chat-grid">
+      <Grid item container className="chat-grid" lg={12}>
         <Grid className="scroll-flow">
         <List className="chat-left">
           <Grid>

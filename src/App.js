@@ -42,11 +42,11 @@ function App() {
         </Grid>
       </Grid>
       <Divider />
-      <Grid container  className="chatSection">
-        <LeftSidePanel />
-        <Conversation />
-        <Chat />
-        <User />
+      <Grid container item  className="chatSection" lg={12}>
+         <LeftSidePanel />
+        <Grid item lg={3} md={3} xs={2}> <Conversation /></Grid>
+        <Grid item lg={6} md={6} xs={3}><Chat /></Grid>
+        <Grid item lg={2} md={2} xs={2}><User /></Grid>
         {/* <Test /> */}
 
       </Grid>

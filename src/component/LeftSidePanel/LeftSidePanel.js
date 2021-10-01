@@ -17,7 +17,7 @@ import CustomizedTooltip from "../Common/ToolTip/CustomizedTooltip";
 
 function LeftSidePanel() {
   return (
-    <Grid item xs={1} className="panel-container" direction="row" container>
+    <Grid item lg={1} md={1} xs={1}className="panel-container" direction="row" container>
       <Grid xs={9}  >
       <InboxIcon />
       <Podcast />
@@ -26,14 +26,14 @@ function LeftSidePanel() {
       <PanelIcon />
       <ConstructionIcon />
       </Grid>
-      <Grid >
+      {/* <Grid > */}
       <CustomizedTooltip title="Status">
         <SentimentSatisfiedOutlinedIcon className="panel-icon smile-icon"></SentimentSatisfiedOutlinedIcon>
       </CustomizedTooltip>
       <CustomizedTooltip title="Status">
         <SentimentSatisfiedOutlinedIcon className="panel-icon smile-icon"></SentimentSatisfiedOutlinedIcon>
       </CustomizedTooltip>
-      </Grid>
+      {/* </Grid> */}
     </Grid>
   );
 }
