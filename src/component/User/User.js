@@ -28,6 +28,7 @@ import UserData from "./User.json";
 import ThirdParty from "./ThirdParty.json";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ListItem from '@material-ui/core/ListItem';
 
 const message = `Truncation should be conditionally applicable on this long line of text
  as this is a much longer line than what the container can support. `;
@@ -43,14 +44,23 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
     marginBottom: 20,
+    boxShadow: "none",
+    maxHeight: 325,
+    overflow: "auto",
   },
   typography: {
     textAlign: "center",
     fontSize: 20,
     fontFamily: "Work Sans",
+    marginTop: 10,
+    marginBottom: 20,
   },
   Box: {
     display: "flex",
+  },
+  ListItem: {
+    display: "flex",
+    justifyContent: "end"
   }
 }));
 
@@ -136,6 +146,8 @@ function User() {
             </Paper>
           )}
         </Grid>
+        <Paper  class={classes.paper}>
+
         {thirdPartyDetail &&
           thirdPartyDetail.length > 0 &&
           thirdPartyDetail.map((t) => {
@@ -171,6 +183,7 @@ function User() {
               </Accordion>
             );
           })}
+          </Paper>
       </Box>
     </Grid>
   );
