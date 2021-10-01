@@ -77,7 +77,7 @@ class Conversation extends Component {
     const { classes } = this.props;
     console.log(classes)
     return (
-      <Grid className="blue-bg block-spacing" direction="row">
+      <Grid className="blue-bg block-spacing">
           <Grid className="compose-block">
             <Box className="compose-button">
               <ComposeIcon />
@@ -109,7 +109,7 @@ class Conversation extends Component {
               </CustomizedTooltip>
             </Grid>
           </Grid>
-          <Grid className="height-conversation">
+          <Grid className="height-conversation scroll">
           <InfiniteScroll className="scroll"
             dataLength={this.state.ConversationData.length}
             next={this.fetchMoreData}
@@ -142,7 +142,7 @@ class Conversation extends Component {
                           {/* <Grid className="dot-w"> 
                             <WhatsAppIcon className="whatsApp"></WhatsAppIcon>
                             </Grid> */}
-                            <Avatar className={classes.avatar}>  <WhatsAppIcon></WhatsAppIcon></Avatar>
+                            <Avatar className="avatar-icon" >  <WhatsAppIcon></WhatsAppIcon></Avatar>
                         </Avatar>
                       </ListItemIcon>
                     </Grid>

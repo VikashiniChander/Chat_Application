@@ -18,7 +18,7 @@ import CustomizedTooltip from "../Common/ToolTip/CustomizedTooltip";
 function LeftSidePanel() {
   return (
     <Grid item xs={1} className="panel-container" direction="row" container>
-      <Grid xs={9} direction="column" >
+      <Grid xs={9}  >
       <InboxIcon />
       <Podcast />
       <TextIcon />
@@ -26,7 +26,7 @@ function LeftSidePanel() {
       <PanelIcon />
       <ConstructionIcon />
       </Grid>
-      <Grid direction="column">
+      <Grid >
       <CustomizedTooltip title="Status">
         <SentimentSatisfiedOutlinedIcon className="panel-icon smile-icon"></SentimentSatisfiedOutlinedIcon>
       </CustomizedTooltip>
