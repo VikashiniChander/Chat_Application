@@ -49,6 +49,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 20,
     fontFamily: "Work Sans",
   },
+  Box: {
+    display: "flex",
+  }
 }));
 
 function User() {
@@ -142,7 +145,7 @@ function User() {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Box textAlign="right" className="content-align">
+                  <Box textAlign="right"  class={classes.Box}>
                     <CustomizedTooltip placement="top" title="Configure">
                       <SettingsOutlinedIcon className="gearIcon"></SettingsOutlinedIcon>
                     </CustomizedTooltip>
