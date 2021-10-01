@@ -43,7 +43,20 @@ const styles = {
     wordBreak: "break-all",
     overflow: "hidden",
   },
-};
+}
+
+const styleAvatar = makeStyles((theme) => ({
+    avatar: {
+    backgroundColor: theme.palette.grey[50],
+    border: `1px solid ${theme.palette.info.main}`,
+    color: theme.palette.info.main,
+    bottom: 10,
+    left: 20,
+    height: "25 !important"
+  },
+  
+}));
+
 class Conversation extends Component {
   constructor(props) {
     super(props);
@@ -125,9 +138,12 @@ class Conversation extends Component {
                           alt="Remy Sharp"
                           src="https://material-ui.com/static/images/avatar/1.jpg"
                         /> */}
-                        <Grid class="avatar"> <Grid className="letter">R</Grid><Grid className="dot-w"> 
+                        <Avatar class="avatar"> <Grid className="letter">R</Grid>
+                          {/* <Grid className="dot-w"> 
                             <WhatsAppIcon className="whatsApp"></WhatsAppIcon>
-                            </Grid> </Grid>
+                            </Grid> */}
+                            <Avatar className={classes.avatar}>  <WhatsAppIcon></WhatsAppIcon></Avatar>
+                        </Avatar>
                       </ListItemIcon>
                     </Grid>
                     <Grid item xs={6} md={9}>

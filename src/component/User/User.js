@@ -63,8 +63,8 @@ function User() {
           <ComposeIconBlack />
         </Box>
 
-        <Grid item conatiner>
-        <Grid item conatiner>
+        <Grid item>
+        <Grid item>
 
           <Grid  className="arrowBackIcon"><ArrowBackIosIcon></ArrowBackIosIcon></Grid>
 
@@ -75,14 +75,14 @@ function User() {
             </Box> */}
             <Avatar src="https://material-ui.com/static/images/avatar/1.jpg"></Avatar>
           </Grid>
-          <Grid class="arrowIcon"><ArrowForwardIosIcon></ArrowForwardIosIcon></Grid>
+          <Grid className="arrowIcon"><ArrowForwardIosIcon></ArrowForwardIosIcon></Grid>
           </Grid>
 
           {UserData && UserData.data && (
             <Paper className="rectangle">
-              <Box wrap="wrap" container mt={2}>
+              <Box wrap="wrap" container mt={4}>
                 <Grid xs={12}>
-                  <Typography class={classes.typography}>
+                  <Typography className={classes.typography}>
                     {`${UserData.data.contact.firstName} ${UserData.data.contact.lastName}`}
                   </Typography>
                 </Grid>

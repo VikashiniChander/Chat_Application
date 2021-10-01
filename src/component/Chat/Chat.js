@@ -31,7 +31,8 @@ class Chat extends Component {
   render() {
     return (
       <Grid item lg={7} md={6} className="chat-grid">
-        <List className="chat-left">
+        <Grid >
+        {/* <List className="chat-left">
           <Grid>
             <Grid>
               <ListItem button key="RemySharp">
@@ -54,7 +55,7 @@ class Chat extends Component {
             </Grid>
             <CheckIcon className="tickGreen" />
           </Grid>
-        </List>
+        </List> */}
         <List className="chat-right">
           <Grid>
             <Grid>
@@ -85,7 +86,6 @@ class Chat extends Component {
               <ListItem button key="RemySharp">
                 <Avatar
                   alt="Remy Sharp"
-                  src="https://material-ui.com/static/images/avatar/1.jpg"
                 />
                 <ListItemText
                   className="userName"
@@ -106,31 +106,32 @@ class Chat extends Component {
             <CheckIcon className="tickGreen" />
           </Grid>
         </List>
+        </Grid>
         <Divider />
-        <Grid container className="message-box ">
-        <Grid xs={1} className="icon">
+        <Grid container className="message-box" >
+          <Grid xs={1} item className="icon">
             <Grid>
               {" "}
               <TokenIcon />
             </Grid>
           </Grid>
-          <Grid xs={1} className="icon">
+          <Grid xs={1} item className="icon">
             <CustomizedTooltip placement="top" title="Links">
               <InsertLinkSharpIcon></InsertLinkSharpIcon>
             </CustomizedTooltip>
           </Grid>
-          <Grid xs={1} className="icon">
+          <Grid xs={1} item className="icon">
             <CustomizedTooltip placement="top" title="Attachments">
               <AttachFileSharpIcon></AttachFileSharpIcon>
             </CustomizedTooltip>
           </Grid>
-          <Grid xs={1} className="icon">
+          <Grid xs={1} item className="icon">
             <TextIcon />
           </Grid>
-          <Grid item xs={8} sm={6}>
+          <Grid item lg={9} sm={6}>
             <TextField label="Type a message..." fullWidth />
           </Grid>
-          <Grid xs={1} className="icon">
+          <Grid xs={1} item className="icon">
             <Grid>
               <CustomizedTooltip placement="top" title="Send">
                 <SendOutlinedIcon></SendOutlinedIcon>
