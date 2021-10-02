@@ -38,7 +38,7 @@ const styles = {
     position: "relative",
     lineHeight: "1em",
     height: "2.5em",
-    width: "180px",
+    // width: "180px",
     display: "-webkit-box",
     boxOrient: "vertical",
     lineClamp: 2,
@@ -107,7 +107,7 @@ class Conversation extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Grid className="blue-bg block-spacing">
+      <Grid className="blue-bg block-spacing" lg="auto" md={3}>
           <Grid className="compose-block">
             <Box className="compose-button">
               <ComposeIcon />

@@ -73,8 +73,8 @@ function User() {
   const [selectedIndx, setSelectedIndx] = React.useState(0);
   const [userDataDetail, setUserDataDetail] = React.useState(UserData.data[0]);
   return (
-    <Grid item lg={2} md={2}>
-      <Box spacing={2} className="user-block">
+    <Grid item lg={2} md={2} sm={2}>
+      <Box className="user-block">
         <Box className="composeIcon">
           <ComposeIconBlack />
         </Box>
