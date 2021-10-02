@@ -44,7 +44,25 @@ const styles = {
     lineClamp: 2,
     wordBreak: "break-all",
   },
-};
+  root: {
+    MuiAvatar: {
+      height: 25
+    }
+  }
+}
+
+const styleAvatar = makeStyles((theme) => ({
+    avatar: {
+    backgroundColor: theme.palette.grey[50],
+    border: `1px solid ${theme.palette.info.main}`,
+    color: theme.palette.info.main,
+    bottom: 10,
+    left: 20,
+    height: "25 !important"
+  },
+  
+}));
+
 class Conversation extends Component {
   constructor(props) {
     super(props);
@@ -90,7 +108,6 @@ class Conversation extends Component {
     const { classes } = this.props;
     return (
       <Grid className="blue-bg block-spacing">
-        <Box>
           <Grid className="compose-block">
             <Box className="compose-button">
               <ComposeIcon />
@@ -120,8 +137,8 @@ class Conversation extends Component {
               </CustomizedTooltip>
             </Grid>
           </Grid>
-          <InfiniteScroll
-            className="scroll"
+          <Grid className="height-conversation scroll">
+          <InfiniteScroll className="scroll"
             dataLength={this.state.ConversationData.length}
             next={this.fetchMoreData}
             hasMore={true}
@@ -149,12 +166,18 @@ class Conversation extends Component {
                           alt="Remy Sharp"
                           src="https://material-ui.com/static/images/avatar/1.jpg"
                         /> */}
-                        <Grid class="avatar">
+                        <Avatar class="avatar"> <Grid className="letter">R</Grid>
+                          {/* <Grid className="dot-w"> 
+                            <WhatsAppIcon className="whatsApp"></WhatsAppIcon>
+                            </Grid> */}
+                            <Avatar className="avatar-icon" >  <WhatsAppIcon></WhatsAppIcon></Avatar>
+                        </Avatar>
+                        {/* <Grid class="avatar">
                           <Grid className="letter">R</Grid>
                           <Grid className="dot-w">
                             {this.getStatusIcon(c.type)}
                           </Grid>{" "}
-                        </Grid>
+                        </Grid> */}
                       </ListItemIcon>
                     </Grid>
                     <Grid item xs={6} md={9}>
@@ -181,7 +204,7 @@ class Conversation extends Component {
               );
             })}
           </InfiniteScroll>
-        </Box>
+          </Grid>
       </Grid>
     );
   }
