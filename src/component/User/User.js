@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     marginBottom: 20,
     boxShadow: "none",
-    maxHeight: 325,
+    maxHeight: 300,
     overflow: "auto",
   },
   typography: {
@@ -61,7 +61,8 @@ const useStyles = makeStyles((theme) => ({
   ListItem: {
     display: "flex",
     justifyContent: "end"
-  }
+  },
+ 
 }));
 
 function User() {
@@ -146,7 +147,8 @@ function User() {
             </Paper>
           )}
         </Grid>
-        <Paper  class={classes.paper}>
+        <Paper  class={classes.paper}      
+        >
 
         {thirdPartyDetail &&
           thirdPartyDetail.length > 0 &&
