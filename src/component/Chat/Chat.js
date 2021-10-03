@@ -22,6 +22,7 @@ import AttachFileSharpIcon from "@material-ui/icons/AttachFileSharp";
 import InsertLinkSharpIcon from "@material-ui/icons/InsertLinkSharp";
 import TextIcon from "../Common/TextIcon/TextIcon";
 import TokenIcon from "../Common/TokenIcon/TokenIcon";
+import Typography from "@material-ui/core/Typography";
 
 // import TextSnippetOutlinedIcon from '@material-ui/icons/TextSnippetOutlined';
 // import TextSnippetOutlinedIcon from '@material-ui/icons/TextSnippetOutlined';
@@ -30,7 +31,7 @@ import CustomizedTooltip from "./../Common/ToolTip/CustomizedTooltip";
 class Chat extends Component {
   render() {
     return (
-      <Grid item lg={7} md={6} sm={6} className="chat-grid">
+      <Grid item lg={7} md={7} sm={6} className="chat-grid">
         <Grid className="scroll-flow">
         <List className="chat-left">
           <Grid>
@@ -147,6 +148,8 @@ class Chat extends Component {
 
          
         </Grid>
+        <Typography className="helper-text">3 segments (23 characters remaining)</Typography>
+
       </Grid>
     );
   }
